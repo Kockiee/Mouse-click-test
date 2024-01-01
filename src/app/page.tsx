@@ -11,9 +11,9 @@ export default function Home() {
   const CPS = clicks && clicks / testTemp
   const commemorationText = CPS && (
   CPS < 4 ? 'Muito lento, mas devagar pode-se ir longe.' : 
-  CPS > 4 && CPS < 8 ? 'Rápido, mas não muito, melhore isso !' :
-  CPS > 8 && CPS < 12 ? 'Muito Bom, mas ainda não gostei !' : 
-  CPS > 12 && CPS < 105.1 ? 'Você realmente é bom nos clicks, como você treina isso em ?.' :
+  CPS >= 4 && CPS < 8 ? 'Rápido, mas não muito, melhore isso !' :
+  CPS >= 8 && CPS < 12 ? 'Muito Bom, mas ainda não gostei !' : 
+  CPS >= 12 && CPS <= 105.1 ? 'Você realmente é bom nos clicks, como você treina isso em ?.' :
   'Minha nossa você bateu o recorde mundial, meus parabéns ! Espero que tenha gravado 🙃'
   )
 
@@ -67,7 +67,7 @@ export default function Home() {
               className='bg-white p-2 rounded-full w-6 h-6 text-slate-700 flex justify-center items-center font-black absolute top-4 right-4'
               >x</button>
               <p className='text-xl font-bold'>{commemorationText}</p>
-              <p className='text-lg'>Seu CPS (clicks por segundo): <span className='font-bold'>{CPS} clicks/s</span></p>
+              <p className='text-lg'>Seu CPS (clicks por segundo) é de <span className='font-bold'>{CPS} clicks/s</span></p>
               <p className='text-lg'>Você clicou {clicks} vezes em {testTemp} segundos</p>
             </div>
           </div>
