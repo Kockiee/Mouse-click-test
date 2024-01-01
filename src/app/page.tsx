@@ -57,13 +57,13 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-4">Contador de Cliques por Segundo</h1>
       <p className="text-lg mb-8">Clique abaixo para começar a contagem.</p>
       {isFinalized && (
-        <div className='fixed z-10 top-48'>
+        <div className='fixed z-10 top-48 w-full'>
           <div 
           className='relative bg-slate-700 rounded p-2 shadow-lg shadow-blue-600/20 border border-slate-700 w-full h-[400px] flex flex-col justify-center items-center select-none'
           >
             <button 
             onClick={() => setIsFinalized(false)}
-            className='bg-white p-2 rounded-full w-5 h-5 text-slate-700 flex justify-center items-center font-black absolute top-4 right-4'
+            className='bg-white p-2 rounded-full w-6 h-6 text-slate-700 flex justify-center items-center font-black absolute top-4 right-4'
             >x</button>
             <p className='text-xl font-bold'>{commemorationText}</p>
             <p className='text-lg'>Seu CPS (clicks por segundo): <span className='font-bold'>{CPS} clicks/s</span></p>
