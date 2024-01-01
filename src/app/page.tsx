@@ -71,11 +71,11 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div onClick={handleClickTest} className='rounded bg-slate-800 p-2 shadow border border-slate-700 w-[700px] h-[400px] flex flex-col justify-center items-center select-none'>
+      <div onClick={handleClickTest} className='rounded bg-slate-800 p-2 shadow border border-slate-700 w-full h-[400px] flex flex-col justify-center items-center select-none cursor-pointer'>
         <p className='text-slate-400'>\&gt; Começe a clicar !</p>
         <p>Clicks no intervalo selecionado: {clicks}</p>
       </div>
-      <p>Tempo: {clock}</p>
+      <p>Tempo: {clock}seg</p>
       <p>Escolha o tempo do teste</p>
       <div className='rounded max-w-2xl bg-slate-800 border border-slate-700 shadow'>
         <TestButton onClick={() => handleTestButtonClick(1)} value={1} testTemp={testTemp} />
