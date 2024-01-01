@@ -59,7 +59,7 @@ export default function Home() {
       {isFinalized && (
         <div className='fixed z-10 top-48'>
           <div 
-          className='relative bg-slate-700 rounded p-2 shadow-lg shadow-blue-600/20 border border-slate-700 w-[700px] h-[400px] flex flex-col justify-center items-center select-none'
+          className='relative bg-slate-700 rounded p-2 shadow-lg shadow-blue-600/20 border border-slate-700 w-full h-[400px] flex flex-col justify-center items-center select-none'
           >
             <button 
             onClick={() => setIsFinalized(false)}
