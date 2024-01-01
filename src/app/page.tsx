@@ -56,24 +56,26 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center space-y-4 p-24">
       <h1 className="text-3xl font-bold mb-4">Contador de Cliques por Segundo</h1>
       <p className="text-lg mb-8">Clique abaixo para começar a contagem.</p>
-      {isFinalized && (
-        <div className='fixed z-10 top-48 w-full'>
-          <div 
-          className='relative bg-slate-700 rounded p-2 shadow-lg shadow-blue-600/20 border border-slate-700 w-full h-[400px] flex flex-col justify-center items-center select-none'
-          >
-            <button 
-            onClick={() => setIsFinalized(false)}
-            className='bg-white p-2 rounded-full w-6 h-6 text-slate-700 flex justify-center items-center font-black absolute top-4 right-4'
-            >x</button>
-            <p className='text-xl font-bold'>{commemorationText}</p>
-            <p className='text-lg'>Seu CPS (clicks por segundo): <span className='font-bold'>{CPS} clicks/s</span></p>
-            <p className='text-lg'>Você clicou {clicks} vezes em {testTemp} segundos</p>
+      <div className='w-full relative'>
+        {isFinalized && (
+          <div className='absolute z-10 w-full'>
+            <div 
+            className='relative bg-slate-700 rounded p-2 shadow-lg shadow-blue-600/20 border border-slate-700 w-full h-[400px] flex flex-col justify-center items-center select-none'
+            >
+              <button 
+              onClick={() => setIsFinalized(false)}
+              className='bg-white p-2 rounded-full w-6 h-6 text-slate-700 flex justify-center items-center font-black absolute top-4 right-4'
+              >x</button>
+              <p className='text-xl font-bold'>{commemorationText}</p>
+              <p className='text-lg'>Seu CPS (clicks por segundo): <span className='font-bold'>{CPS} clicks/s</span></p>
+              <p className='text-lg'>Você clicou {clicks} vezes em {testTemp} segundos</p>
+            </div>
           </div>
+        )}
+        <div onClick={handleClickTest} className='rounded bg-slate-800 p-2 shadow border border-slate-700 w-full h-[400px] flex flex-col justify-center items-center select-none cursor-pointer'>
+          <p className='text-slate-400'>\&gt; Começe a clicar !</p>
+          <p>Clicks no intervalo selecionado: {clicks}</p>
         </div>
-      )}
-      <div onClick={handleClickTest} className='rounded bg-slate-800 p-2 shadow border border-slate-700 w-full h-[400px] flex flex-col justify-center items-center select-none cursor-pointer'>
-        <p className='text-slate-400'>\&gt; Começe a clicar !</p>
-        <p>Clicks no intervalo selecionado: {clicks}</p>
       </div>
       <p>Tempo: {clock}seg</p>
       <p>Escolha o tempo do teste</p>
